@@ -1,5 +1,6 @@
 import { IoChevronForwardSharp } from "react-icons/io5";
 import GenresList from "./constant/GenresList";
+import MovieList from "./MovieList";
 
 function GenreMovieList() {
   return (
@@ -14,6 +15,7 @@ function GenreMovieList() {
                   VIEW ALL <IoChevronForwardSharp className="text-white ml-2" />
                 </span>
               </h2>
+              <MovieList genreId={item.id} />
             </div>
           )
       )}
