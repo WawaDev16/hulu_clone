@@ -37,7 +37,7 @@ function Header() {
 
   return (
     <div
-      className="flex justify-between items-center p-4 px-10 
+      className="flex z-30 justify-between items-center p-4 px-10 
     absolute w-full bg-gradient-to-b from-[#1e2126] to-transparent
     "
     >
@@ -45,9 +45,11 @@ function Header() {
       <ul className="hidden  md:flex gap-8">
         {menu.map((item) => (
           <li
-            className="text-gray-400 text-[18px] 
+            className={`text-gray-400 text-[18px] 
           font-medium cursor-pointer hover:bg-gray-700 
-          hover:text-white px-3 pb-2 py-1 rounded-md transition-all duration-500 ease-in-out"
+          hover:text-white px-3 pb-2 py-1
+          ${item.id == 1 ? "bg-gray-700 text-white" : null}
+          rounded-md transition-all duration-500 ease-in-out`}
           >
             {item.name}
           </li>
@@ -55,7 +57,7 @@ function Header() {
       </ul>
       <div className="md:hidden ">
         <h2
-          className=" text-white font-medium flex items-center hover:bg-gray-700 rounded-md cursor-pointer"
+          className=" text-white font-medium flex items-center hover:bg-gray-750 rounded-md cursor-pointer"
           onClick={() => setToggle(!toggle)}
         >
           Home
